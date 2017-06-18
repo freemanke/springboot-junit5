@@ -1,6 +1,9 @@
-package com.freemanke.springbootjunit5;
+package com;
 
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.EnumSource;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static java.time.Duration.ofMillis;
 import static org.junit.jupiter.api.Assertions.*;
@@ -57,20 +60,22 @@ public class Junit5PractiseTest {
 
     }
 
-//    @ParameterizedTest
-//    @ValueSource(strings = {"1", "2"})
-//    public void testWithStringParameter(String argument) {
-//        assertNotNull(argument);
-//    }
-//
-//    @ParameterizedTest
-//    @EnumSource(StatusType.class)
-//    public void testWithEnumParameter(StatusType argument) {
-//        System.out.println(argument);
-//        assertNotNull(argument);
-//    }
+    @ParameterizedTest
+    @ValueSource(strings = {"1", "2"})
+    public void testWithStringParameter(String argument) {
+        assertNotNull(argument);
+    }
+
+    @ParameterizedTest
+    @EnumSource(StatusType.class)
+    public void testWithEnumParameter(StatusType argument) {
+        System.out.println(argument);
+        assertNotNull(argument);
+    }
+
+    enum StatusType {
+        CRYING, LAUGHING, OTHERS
+    }
 }
 
-enum StatusType {
-    CRYING, LAUGHING, OTHERS
-}
+
