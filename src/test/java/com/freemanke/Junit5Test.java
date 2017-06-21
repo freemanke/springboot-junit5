@@ -1,4 +1,4 @@
-package com;
+package com.freemanke;
 
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -9,7 +9,7 @@ import static java.time.Duration.ofMillis;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
-public class Junit5PractiseTest {
+public class Junit5Test {
 
     @BeforeAll
     public static void beforeAll() {
@@ -32,7 +32,7 @@ public class Junit5PractiseTest {
 
     @Test
     public void timeoutNotExceeded() {
-        assertTimeout(ofMillis(2), () -> Thread.sleep(1));
+        assertTimeout(ofMillis(10), () -> Thread.sleep(3));
     }
 
     @Test
